@@ -1,4 +1,7 @@
-![TALLER DE PROGRAMACION WEB](https://raw.githubusercontent.com/gcoronelc/USIL_TPW_2017_2_TM/master/USIL_TPW_2017-2_TM.png)
+![TALLER DE PROGRAMACION WEB](https://raw.githubusercontent.com/gcoronelc/USIL_TPW_2017_2_TM/master/Img/USIL_TPW_2017-2_TM.png)
+![TALLER DE PROGRAMACION WEB](https://raw.githubusercontent.com/gcoronelc/USIL_TPW_2017_2_TM/master/Img/SpringFramework.png)
+![TALLER DE PROGRAMACION WEB](https://raw.githubusercontent.com/gcoronelc/USIL_TPW_2017_2_TM/master/Img/DesarrollaSoftware.png)
+
 
 # TALLER DE PROGRAMACION WEB
 
