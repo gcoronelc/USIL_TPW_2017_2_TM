@@ -25,6 +25,13 @@
 - Pool de conexiones con Tomcat: http://goo.gl/ZdQQv0
 - Pool de conexiones con GlassFish: http://goo.gl/pyAt8d
 
+# MICROSERVICIOS
+
+- https://www.ibm.com/developerworks/ssa/cloud/library/cl-refactor-microservices-bluemix-trs-1/index.html
+
+
+
+
 
 
 # Auto-Evaluación
