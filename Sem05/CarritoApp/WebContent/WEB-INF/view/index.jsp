@@ -7,6 +7,17 @@
 <title>CARRITO APP</title>
 </head>
 <body>
-	<p>Por fin, ya era hora.</p>
+
+	<!-- Parte comun para todas las páginas -->
+	<div>
+		<jsp:include page="titulo.jsp"/>
+	</div>
+	<div>
+		<jsp:include page="menu.jsp"/>
+	</div>
+	
+	
+	<p>Esta es mi página de inicio.</p>
+	
 </body>
 </html>
