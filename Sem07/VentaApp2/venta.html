@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SUMA</title>
+	<script type="text/javascript" src="jquery/jquery.js" ></script>
+	<script type="text/javascript" src="service/ServicioVenta.js" ></script>
+</head>
+<body>
+	<h1>APRENDIENDO JQUERY</h1>
+	<div>
+		<button id="btnProcesar" type="button">Procesar</button>
+		<button id="btnNuevo" type="button">Nuevo</button>
+	</div>
+	<div id="divForm">
+		<h2>DATOS DEL REQUERIMIENTO</h2>
+		<form>
+			<table>
+				<tr>
+					<td>Precio:</td>
+					<td><input type="text" id="precio" name="precio"/></td>
+				</tr>
+				<tr>
+					<td>Cantidad:</td>
+					<td><input type="text" id="cant" name="cant"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div id="divRepo">
+		<h2>REPORTE</h2>
+		<table>
+			<tr>
+				<td colspan="2">INPUT</td>
+			</tr>
+			<tr>
+				<td>Precio</td>
+				<td><span id="repoPrecio"></span></td>
+			</tr>
+			<tr>
+				<td>Cantidad</td>
+				<td><span id="repoCant"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2">OUTPUT</td>
+			</tr>
+			<tr>
+				<td>Importe</td>
+				<td><span id="repoImporte"></span></td>
+			</tr>
+			<tr>
+				<td>Impuesto</td>
+				<td><span id="repoImpuesto"></span></td>
+			</tr>
+			<tr>
+				<td>Importe</td>
+				<td><span id="repoTotal"></span></td>
+			</tr>
+		</table>
+	</div>
+
+	<script>
+		
+		$("#btnProcesar").click(btnProcesarClick);
+
+		function btnProcesarClick(){
+			// Datos
+			var precio = parseFloat($("#precio").val());
+			var cant = parseInt($("#cant").val());
+			// Proceso
+			ventaModel = {"precio":precio,"cant":cant,"importe":0,"impuesto":0,"total":0};
+			ventaModel = procesarVenta(ventaModel);
+			// Reporte
+			var repo = "Total " + ventaModel.total;
+			alert(repo);
+		}
+
+	</script>
+</body>
+</html>
