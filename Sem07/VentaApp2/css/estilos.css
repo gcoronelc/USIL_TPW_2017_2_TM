@@ -22,6 +22,17 @@
     border: 2px solid #c0392b;
 }
 
+.botonDisable{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #bdc3c7;
+    border-radius: 6px;
+    border: 2px solid #7f8c8d;
+}
+
 .botonForm{
     text-decoration: none;
     padding: 10px;

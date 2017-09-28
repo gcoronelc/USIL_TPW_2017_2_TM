@@ -3,14 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SUMA</title>
+	<link rel="stylesheet" href="css/estilos.css">
 	<script type="text/javascript" src="jquery/jquery.js" ></script>
 	<script type="text/javascript" src="service/ServicioVenta.js" ></script>
 </head>
 <body>
 	<h1>APRENDIENDO JQUERY</h1>
 	<div>
-		<button id="btnProcesar" type="button">Procesar</button>
-		<button id="btnNuevo" type="button">Nuevo</button>
+		<button class="botonActive" id="btnProcesar" type="button">Procesar</button>
+		<button class="botonDisable" id="btnNuevo" type="button">Nuevo</button>
 	</div>
 	<div id="divForm">
 		<h2>DATOS DEL REQUERIMIENTO</h2>
@@ -61,9 +62,15 @@
 	</div>
 
 	<script>
-		
-		$("#btnProcesar").click(btnProcesarClick);
 
+		// Init Page
+		btnNuevoClick();
+		
+		// Programando los botones
+		$("#btnProcesar").click(btnProcesarClick);
+		$("#btnNuevo").click(btnNuevoClick);
+
+		// Las funciones
 		function btnProcesarClick(){
 			// Datos
 			var precio = parseFloat($("#precio").val());
@@ -72,8 +79,28 @@
 			ventaModel = {"precio":precio,"cant":cant,"importe":0,"impuesto":0,"total":0};
 			ventaModel = procesarVenta(ventaModel);
 			// Reporte
-			var repo = "Total " + ventaModel.total;
-			alert(repo);
+			$("#repoPrecio").text(ventaModel.precio);
+			$("#repoCant").text(ventaModel.cant);
+			$("#repoImporte").text(ventaModel.importe);
+			$("#repoImpuesto").text(ventaModel.impuesto);
+			$("#repoTotal").text(ventaModel.total);
+			$("#divForm").hide();
+			$("#divRepo").show();
+			$("#btnProcesar").removeClass();
+			$("#btnProcesar").addClass("botonDisable");
+			$("#btnNuevo").removeClass();
+			$("#btnNuevo").addClass("botonActive");
+		}
+
+		function btnNuevoClick(){
+			$("#precio").val("");
+			$("#cant").val("");
+			$("#divForm").show();
+			$("#divRepo").hide();
+			$("#btnProcesar").removeClass();
+			$("#btnProcesar").addClass("botonActive");
+			$("#btnNuevo").removeClass();
+			$("#btnNuevo").addClass("botonDisable");
 		}
 
 	</script>
