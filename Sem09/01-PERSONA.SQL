@@ -1,0 +1,65 @@
+/*
+Empresa        :  EGCC
+Software       :  Sistema de Gestion de condominios
+DBMS           :  MySQL Server
+Base de Datos  :  CONDOMINIO
+Script         :  Crea esquema PERSONA
+Responsable    :  Ing. Eric Gustavo Coronel Castillo
+Telefono       :  (511) 9966-64457
+Email          :  gcoronelc@gmail.com
+Sitio Web      :  http://www.desarrollasoftware.com
+Blog           :  http://gcoronelc.blogspot.com
+*/
+
+
+-- =============================================
+-- Creación de tablas
+-- =============================================
+
+CREATE TABLE TPERSONA
+(
+	idtpersona           INTEGER NOT NULL,
+	nombre               VARCHAR(40) NOT NULL,
+	CONSTRAINT PK_TPERSONA PRIMARY KEY (idtpersona)
+) ENGINE=INNODB;
+
+INSERT INTO TPERSONA(IDTPERSONA,NOMBRE) VALUES
+(1,'PROPIETARIO'),
+(2,'ADMINISTRADOR'),
+(3,'DIRECTIVO'),
+(4,'SECRETARIA');
+
+
+CREATE TABLE PERSONA
+(
+	idpersona            INTEGER AUTO_INCREMENT,
+	idtpersona           INTEGER NOT NULL,
+	apellido             VARCHAR(60) NOT NULL,
+	nombre               VARCHAR(60) NOT NULL,
+	dni                  VARCHAR(20) NOT NULL,
+	email                VARCHAR(60) NOT NULL,
+	telefono             VARCHAR(20) NOT NULL,
+	direccion            VARCHAR(100) NOT NULL,
+	CONSTRAINT PK_PERSONA PRIMARY KEY (idpersona),
+	FOREIGN KEY FK_PERSONA_TPERSONA (idtpersona) 
+	   REFERENCES TPERSONA (idtpersona)
+) ENGINE=INNODB;
+
+INSERT INTO PERSONA(IDPERSONA,IDTPERSONA,APELLIDO,
+NOMBRE,DNI,EMAIL,TELEFONO,DIRECCION ) VALUES
+(1,1,'CORONEL','GUSTAVO','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(2,1,'SALAZAR','BARBARA','65782345','BARBARA@GMAIL.COM','657346578','MI CASA'),
+(3,1,'DEL AGUILA','FIORELLA','98345678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(4,1,'ALFARO','CARLOS','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(5,1,'LABAN ','CYNTHYA','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(6,1,'DIAZ','MANUEL','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(7,1,'CONDOR','JOSE','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(8,2,'ORIA ','CLAUDIA','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(9,3,'CHOQUECAHUANA ','JAVIER','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA'),
+(10,4,'PRIETO','STHEPHANY','89435678','GUSTAVO@GMAIL.COM','657346578','MI CASA');
+
+
+
+
+
+
