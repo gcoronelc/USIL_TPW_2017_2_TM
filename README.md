@@ -24,6 +24,9 @@
 - Artículo sobre Git y GitHub: http://goo.gl/6hZMfX
 - Pool de conexiones con Tomcat: http://goo.gl/ZdQQv0
 - Pool de conexiones con GlassFish: http://goo.gl/pyAt8d
+- Blog de Spring: http://www.jtech.ua.es/j2ee/publico/spring-2012-13/sesion01-apuntes.html
+- Programador Moderno: https://youtu.be/QGpoxFmrkIY
+
 
 # MICROSERVICIOS
 
