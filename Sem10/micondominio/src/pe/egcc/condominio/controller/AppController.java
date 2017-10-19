@@ -19,6 +19,21 @@ public class AppController {
   @Autowired
   private LogonService logonService;
   
+  @RequestMapping(value="main.htm", method=RequestMethod.GET)
+  public String main(HttpSession session){
+    
+    String destino;
+    
+    if(session.getAttribute("usuario") == null){
+      destino = "index";
+    } else {
+      destino = "main";
+    }
+    
+    return destino;
+    
+  }
+  
   @RequestMapping(value="index.htm", method=RequestMethod.GET)
   public String index(){
     return "index";
@@ -44,6 +59,17 @@ public class AppController {
     }
     
     return destino;
+    
+  }
+  
+  @RequestMapping(value="salir.htm", method=RequestMethod.GET)
+  public String salir(
+      HttpSession session
+      ){
+    
+    session.invalidate();
+    
+    return "index";
     
   }
   

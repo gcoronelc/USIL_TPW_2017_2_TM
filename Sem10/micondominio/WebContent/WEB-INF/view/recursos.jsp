@@ -4,6 +4,12 @@
 
 
 <!-- CSS -->
+
+<link rel="stylesheet" type="text/css" 
+href='<c:url value="/css/normalize.css" />'>
+
 <link rel="stylesheet" type="text/css" 
 href='<c:url value="/css/estilos.css" />'>
 
+<link rel="stylesheet" type="text/css" 
+href='<c:url value="/menu/menu.css" />'>
