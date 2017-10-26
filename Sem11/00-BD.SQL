@@ -12,6 +12,7 @@ Blog           :  http://gcoronelc.blogspot.com
 */
 
 
+
 -- =============================================
 -- Creación de la Base de Datos
 -- =============================================
@@ -25,7 +26,7 @@ CREATE DATABASE CONDOMINIO;
 -- Seleccionar la Base de Datos
 -- =============================================
 
-USE eurekabank;
+USE CONDOMINIO;
 SET NAMES 'utf8';
 
 

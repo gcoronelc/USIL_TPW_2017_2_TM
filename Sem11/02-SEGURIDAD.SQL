@@ -13,6 +13,14 @@ Blog           :  http://gcoronelc.blogspot.com
 
 
 -- =============================================
+-- Seleccionar la Base de Datos
+-- =============================================
+
+USE CONDOMINIO;
+SET NAMES 'utf8';
+
+
+-- =============================================
 -- Creación de tablas
 -- =============================================
 
@@ -47,7 +55,7 @@ CREATE TABLE USUARIO
 
 
 INSERT INTO USUARIO(IDPERSONA,USUARIO,CLAVE,IDROL,ESTADO) VALUES
-(1,'gustavo',SHA('gustavo'),1,1),
-(2,'barbara',SHA('barbara'),3,1),
-(8,'claudia',SHA('claudia'),2,1);
+(2,'gustavo',SHA('gustavo'),1,1),
+(3,'barbara',SHA('barbara'),3,1),
+(9,'claudia',SHA('claudia'),2,1);
 
