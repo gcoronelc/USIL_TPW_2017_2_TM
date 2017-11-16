@@ -1,0 +1,60 @@
+INSERTAR_PERSONAS
+_______________________
+INSERT INTO persona (idpersona, idtpersona, apellido, nombre, dni, email, telefono, direccion) 
+VALUES ('12', '2', 'Milla', 'Sthephany', '48711972', 'sthephany.milla@gmail.com', '991880871', 'Av.Tacna #765');
+_______________________
+ACTUALIZAR
+_______________________
+UPDATE persona  SET idpersona = '13', idtpersona = '2', apellido = 'Condor', nombre = 'Betzy', 
+dni = '72317247', email = 'betzycondor97@gmail.com', telefono = '948848305', direccion = 'Km22 Carabayllo' 
+WHERE persona.idpersona = 14;
+_________________________
+CONSULTAS
+_________________________
+
+____________________________________________________________________________________________________________________
+INSERTAR_INMUEBLE
+__________________________
+INSERT INTO inmueble (idinmueble, piso, numero, descripcion, idpersona, idtinmueble, idtorre, activo) 
+VALUES ('5', '6', '305', 'Departamento', '8', '2', '2', '1');
+__________________________
+ACTUALIZAR
+__________________________
+UPDATE inmueble SET idinmueble = '6', piso = '3', numero = '306', descripcion = 'OFICINA', 
+idpersona = '12', idtinmueble = '3', idtorre = '3' WHERE inmueble.idinmueble = 5;
+__________________________
+________________________________________________________________________________________________________________
+CONSULTA_PERSONA_INMUEBLE,TIPO,ETC
+___________________________________________________________________
+SELECT CONCAT(per.nombre, '',per.apellido) AS NOMBRE_COMPLETO, tper.nombre,
+inm.descripcion,tinm.nombre,tor.nombre
+FROM persona per INNER JOIN inmueble inm ON per.idpersona=inm.idpersona
+INNER JOIN tinmueble tinm ON tinm.idtinmueble=inm.idtinmueble 
+INNER JOIN tpersona tper ON tper.idtpersona=per.idtpersona
+INNER JOIN torre tor ON tor.idtorre=inm.idtorre WHERE per.idpersona='1'
+_____________________________________________________________________
+
+se mostrara el importe
+de la persona que debe
+
+SELECT CONCAT(per.nombre, '',per.apellido) AS NOMBRE_COMPLETO,inm.descripcion,obl.descripcion,tobl.nombre,re.fecVen,SUM(obl.importe+re.importe) IMPORTETOTAL FROM 
+inmueble inm INNER JOIN tinmueble tinm ON inm.idinmueble=tinm.idtinmueble INNER JOIN obligacion obl ON obl.idinmueble=inm.idinmueble 
+INNER JOIN tobligacion tobl ON tobl.idtobligacion=obl.idtobligacion INNER JOIN recibo re ON re.idtobligacion=tobl.idtobligacion INNER JOIN 
+persona per ON inm.idpersona=per.idpersona WHERE per.idpersona="1"
+
+
+
+--------------------------------------------------------------------------
+CONSULTA para saber que condominios estan? ocupados?
+__________________________________________
+SELECT tor.nombre,inm.descripcion, inm.piso,inm.numero, tinm.nombre,inm.activo FROM inmueble inm 
+INNER JOIN tinmueble tinm ON tinm.idtinmueble=inm.idtinmueble INNER JOIN torre tor ON tor.idtorre=inm.idtorre
+____________________________________________________
+PARA SABER; QUE OBLIGACION ES LA QUE DEBE PAGAR AGUA LUZ ETC
+_____________________________________________
+SELECT tinm.nombre,inm.descripcion,tobl.nombre,obl.descripcion,obl.importe FROM inmueble inm INNER JOIN tinmueble tinm ON inm.idinmueble=tinm.idtinmueble INNER JOIN obligacion obl ON obl.idinmueble=inm.idinmueble 
+INNER JOIN tobligacion tobl ON tobl.idtobligacion=obl.idtobligacion
+
+esto para consultar por el tipo de persona ya sea propietario  admitrador condominio secretrai etc
+SELECT tper.nombre, CONCAT(per.nombre, '',per.apellido) AS NOMBRE_COMPLETO,per.dni,per.email,per.telefono,per.direccion
+FROM persona per  INNER JOIN tpersona tper ON per.idtpersona=tper.idtpersona WHERE tper.idtpersona=2
