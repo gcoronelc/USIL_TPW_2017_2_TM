@@ -8,12 +8,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import pe.egcc.condominio.model.Persona;
+import pe.egcc.condominio.service.AppService;
 import pe.egcc.condominio.service.LogonService;
 
 @Controller
@@ -21,6 +24,9 @@ public class AppController {
 
   @Autowired
   private LogonService logonService;
+  
+  @Autowired
+  private AppService appService;
   
   @RequestMapping(value="main.htm", method=RequestMethod.GET)
   public String main(HttpSession session){
@@ -79,16 +85,28 @@ public class AppController {
   // --------------------------------------------
   // Consultas
   // --------------------------------------------
+  
   @RequestMapping( value="coninmuebles.htm", method=RequestMethod.GET)
   public String coninmuebles() {
     return "coninmuebles";    
   }
   
-  public String coninmuebles(
-      @RequestParam("inmueble") Integer inmueble,
+  @RequestMapping( value="coninmuebles.htm", 
+      method=RequestMethod.POST,
+      produces="application/json")  
+  public @ResponseBody String coninmuebles(
+      @RequestParam("tipo") Integer tipo,
       @RequestParam("torre") Integer torre,
       @RequestParam("propietario") String propietario){
-    return "";
+
+    List<Map<String,Object>> lista;
+    
+    lista = appService.leerInmuebles(tipo, torre, propietario);
+    
+    Gson gson = new Gson();
+    String jsonResponse = gson.toJson(lista);
+    
+    return jsonResponse;
   }
   
   
