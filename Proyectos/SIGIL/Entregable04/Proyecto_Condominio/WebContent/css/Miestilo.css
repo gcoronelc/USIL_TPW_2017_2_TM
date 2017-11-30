@@ -1,0 +1,147 @@
+body
+{
+	background-color:#ffd9aa;
+}
+.centra
+{
+text-align: center;
+margin-left:30%;	
+}
+
+.ContenidoCentral
+{
+	height: 450px;
+	width: 1100px;
+	background: url("../img/fondo_index.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+	margin:auto;
+}
+
+h1
+{
+	text-shadow: #333 1px -1.5px 5px;
+	text-align: center;
+	margin-bottom:20px;
+}
+
+div h1
+{
+	padding-top: 10px;
+}
+
+#parrafo1
+{
+display: inline-block;
+width:500px;
+text-align:justify;	
+margin-left:28%;
+}
+
+
+#parrafo1
+{
+	color:black;
+	text-shadow: white 2px 2px 2px;
+}
+
+div .btnMicuenta
+{
+	margin-top: 10px;
+	margin-left: 15%;
+	
+}
+
+.foto_betzy
+{
+	height:150px;
+	width:150px;
+	border-radius: 250px 250px 250px 250px;
+	margin-left: 21%;
+}
+
+#panelEquipo h5, #panelEquipo h6, #panelEquipo2 h5,#panelEquipo2 h6
+{
+	text-align: center;
+}
+
+#equipo_izquierda
+{
+	margin-left: 52%;
+}
+#equipo_izquierda img
+{
+	transform:  rotate(35deg);
+}
+#equipo_derecha 
+{
+	margin-right:55%;
+}
+#equipo_derecha .foto_betzy
+{
+	margin-left:46px;
+}
+
+
+#panel01
+{
+	margin-left: 163.5px;
+	display:inline-block;
+}
+
+#panel02
+{
+	display:inline-block;
+	margin-left: -40px;
+}
+#panel3
+{
+	display:inline-block;
+	margin-left: 60px;
+}
+
+#panel3 img
+{
+	margin-left:20px;
+}
+
+#panel02 img
+{
+	margin-left:10%;
+	transform:  rotate(45deg);
+}
+#panel01 img
+{
+	margin-left:9%;
+}
+
+#foto_betzy2
+{
+	margin-left:30%;
+}
+
+#descNosotros
+{
+	text-align: justify;
+}
+
+#tb_C_timn td
+{
+	text-align: center;
+}
+
+.tb_costa
+{
+	display: inline-block;
+}
+
+
+.negritaTodas td
+{
+	font-weight: 700;
+}
+	
+	
+}
+
