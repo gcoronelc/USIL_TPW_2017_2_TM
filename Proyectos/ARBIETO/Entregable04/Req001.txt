@@ -1,0 +1,27 @@
+Consulta de inmuebles:
+===========================================
+
+1.- Criterios de consulta
+
+    - Tipo de inmueble
+    - Torre
+    - Propietario
+    
+2.- Columnas o datos a mostrar
+
+    - inmueble: ID
+    - tipo: ID
+    - nomtipo:
+    - torre: ID
+    - nomtorre:
+    - piso
+    - numero
+    - descripcion
+    - activo
+    - propietario:
+    - nompropietario: 
+    - agua
+    - mantenimiento
+    - cmantenimiento
+
+
